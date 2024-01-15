@@ -3,6 +3,7 @@ import Main from "./Main/Main";
 import Section from "./Section/Section";
 import Activity from "./Activity/Activity";
 import PolicyIssues from "./PolicyIssues/PolicyIssues";
+import Support from "./Support/Support";
 function Campaign() {
   return (
     <>
@@ -11,6 +12,7 @@ function Campaign() {
       <Section />
       <Activity />
       <PolicyIssues />
+      <Support />
     </>
   );
 }
