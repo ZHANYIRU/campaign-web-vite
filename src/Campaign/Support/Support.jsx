@@ -2,7 +2,7 @@ import "./Support.scss";
 import { moneyFormat } from "@/utils";
 function Support() {
   return (
-    <div className="support_container">
+    <div className="support_container" id="support">
       <div className="right">
         <div className="support_title">
           <h2>SUPPROT US</h2>

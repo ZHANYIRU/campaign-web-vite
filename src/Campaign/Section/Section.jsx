@@ -1,7 +1,7 @@
 import "./Section.scss";
 function Section() {
   return (
-    <section className="section_container">
+    <section className="section_container" id="section">
       <div className="advocate">
         <div className="advocate_title">
           <h2>ADVOCATE</h2>

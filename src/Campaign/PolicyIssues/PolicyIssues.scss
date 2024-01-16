@@ -44,6 +44,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      cursor: pointer;
       > p {
         color: $BLACK;
         font-family: GenSekiGothic TW;
@@ -71,6 +72,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      &:hover {
+        background: url("/src/assets/images/chatbgc-yellow.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
     }
   }

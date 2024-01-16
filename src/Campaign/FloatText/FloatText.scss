@@ -1,0 +1,36 @@
+.float_container {
+  position: fixed;
+  z-index: 999;
+  left: 60px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > svg {
+    animation: floatText 10s linear infinite;
+    textPath {
+      letter-spacing: 6.5px;
+      font-family: GenSekiGothic TW;
+      font-weight: 300;
+    }
+  }
+  > p {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-family: Barlow;
+    font-size: 20px;
+    font-weight: 400;
+    text-indent: 1.7px;
+    letter-spacing: 1.7px;
+    margin-top: -80px;
+    margin-left: -5px;
+  }
+}
+@keyframes floatText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

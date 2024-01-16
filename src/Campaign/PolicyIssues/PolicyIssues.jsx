@@ -4,7 +4,7 @@ import "./PolicyIssues.scss";
 
 function PolicyIssues() {
   return (
-    <div className="policy_container">
+    <div className="policy_container" id="policy">
       <div className="policy_title">
         <h2>POLICY ISSUES</h2>
         <h2>政策議題</h2>

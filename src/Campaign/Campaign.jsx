@@ -7,6 +7,7 @@ import Support from "./Support/Support";
 import Opinion from "./Opinion/Opinion";
 import Footer2 from "./Footer2/Footer2";
 import Footer from "./Footer/Footer";
+import FloatText from "./FloatText/FloatText";
 function Campaign() {
   return (
     <>
@@ -19,6 +20,7 @@ function Campaign() {
       <Opinion />
       <Footer2 />
       <Footer />
+      <FloatText />
     </>
   );
 }

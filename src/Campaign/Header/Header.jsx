@@ -15,11 +15,11 @@ function Header() {
       </div>
       <div className="nav_header">
         <ChatBubble />
-        <p>候選人主張</p>
-        <p>最新活動</p>
-        <p>政策議題</p>
-        <p>民眾服務信箱</p>
-        <p>小額捐款</p>
+        <a href="#section">候選人主張</a>
+        <a href="#activity">最新活動</a>
+        <a href="#policy">政策議題</a>
+        <a href="#opinion">民眾服務信箱</a>
+        <a href="#support">小額捐款</a>
       </div>
       <div className="nav_community">
         <FacebookIcon />

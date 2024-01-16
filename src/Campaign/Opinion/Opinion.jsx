@@ -2,7 +2,7 @@ import "./Opinion.scss";
 
 function Opinion() {
   return (
-    <div className="opinion_container">
+    <div className="opinion_container" id="opinion">
       <div className="opinion_wrap">
         <div className="top">
           <div className="opinion_title">

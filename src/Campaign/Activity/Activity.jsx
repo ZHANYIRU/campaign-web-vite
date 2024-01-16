@@ -5,7 +5,7 @@ import "./Activity.scss";
 function Activity() {
   const dayList = ["12/20", "12/24", "12/26"];
   return (
-    <div className="activity_container">
+    <div className="activity_container" id="activity">
       <div className="activity_container_title">
         <h2>LATEST EVENTS</h2>
         <h2>最新活動</h2>
