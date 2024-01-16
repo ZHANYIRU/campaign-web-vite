@@ -50,7 +50,9 @@ function Support() {
           </div>
           <div className="donate_wrap">
             <div className="text">自由捐</div>
-            <div className="donate_money">$8800</div>
+            <div className="donate_money">
+              <input type="text" placeholder="請輸入金額" />
+            </div>
             <div className="text2">
               <p>最高額度新台幣十萬元整</p>
               <p>為他披荊斬棘前行</p>

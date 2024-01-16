@@ -1,0 +1,110 @@
+@import "/src/color.scss";
+.opinion_container {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0 96px 0;
+  .opinion_wrap {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    .top {
+      display: flex;
+      .opinion_title {
+        margin-top: 30px;
+        > h2:first-of-type {
+          color: rgba(255, 187, 24, 0.4);
+          font-family: Barlow;
+          font-size: 92px;
+          font-weight: 200;
+          letter-spacing: 11.04px;
+          margin-left: -100px;
+        }
+        > h2:nth-of-type(2) {
+          color: $BLACK;
+          font-family: GenSekiGothic TW;
+          font-size: 64px;
+          font-weight: 500;
+          letter-spacing: 7.68px;
+          margin-top: -30px;
+        }
+        > p {
+          margin-top: 30px;
+          width: 90%;
+          color: #000;
+          font-family: GenSekiGothic TW;
+          font-weight: 300;
+          letter-spacing: 1.92px;
+          line-height: 150%;
+          text-indent: 1.92px;
+        }
+      }
+      .people3 {
+        width: 40%;
+        height: 286px;
+        background: url("/src/assets/images/people3.png") no-repeat;
+        background-size: 330px 286px;
+      }
+    }
+    .bottom {
+      width: 100%;
+      border-radius: 28px;
+      border: 6px solid $BLACK;
+      padding: 76px 110px;
+      display: flex;
+      gap: 26px;
+      .left {
+        width: 50%;
+        > p {
+          margin-bottom: 10px;
+        }
+        > input {
+          width: 100%;
+          height: 47px;
+          background-color: #fff7e6;
+          outline: none;
+          border: none;
+          border: 2px solid $BLACK;
+          border-radius: 8px;
+          padding: 0 12px;
+        }
+        > input:not(:last-of-type) {
+          margin-bottom: 36px;
+        }
+      }
+      .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        > p {
+          margin-bottom: 10px;
+        }
+        > textarea {
+          width: 100%;
+          outline: none;
+          border: none;
+          border: 2px solid $BLACK;
+          border-radius: 8px;
+          background-color: #fff7e6;
+          flex: 1;
+          padding: 12px 12px;
+          margin-bottom: 20px;
+        }
+        > button {
+          border: none;
+          outline: none;
+          height: 47px;
+          padding: 0px 12px;
+          border-radius: 8px;
+          background-color: $YELLOW;
+          border: 2px solid $BLACK;
+          cursor: pointer;
+          font-size: 20px;
+          font-family: GenSekiGothic TW;
+          font-weight: 500;
+          letter-spacing: 2.4px;
+          text-indent: 2.4px;
+        }
+      }
+    }
+  }
+}

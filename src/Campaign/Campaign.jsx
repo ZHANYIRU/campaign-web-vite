@@ -4,6 +4,7 @@ import Section from "./Section/Section";
 import Activity from "./Activity/Activity";
 import PolicyIssues from "./PolicyIssues/PolicyIssues";
 import Support from "./Support/Support";
+import Opinion from "./Opinion/Opinion";
 function Campaign() {
   return (
     <>
@@ -13,6 +14,7 @@ function Campaign() {
       <Activity />
       <PolicyIssues />
       <Support />
+      <Opinion />
     </>
   );
 }
