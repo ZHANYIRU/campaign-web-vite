@@ -139,7 +139,7 @@
                 transition: 0.3s;
               }
               &:hover {
-                opacity: 0.9;
+                background-color: $YELLOW;
                 > svg {
                   transform: translateX(10px);
                 }
@@ -165,7 +165,12 @@
                   }
                 }
                 &:hover {
-                  opacity: 0.8;
+                  border-color: $YELLOW;
+                  > svg {
+                    path {
+                      fill: $YELLOW;
+                    }
+                  }
                 }
               }
               > .right {
@@ -183,7 +188,12 @@
                   }
                 }
                 &:hover {
-                  opacity: 0.8;
+                  border-color: $YELLOW;
+                  > svg {
+                    path {
+                      fill: $YELLOW;
+                    }
+                  }
                 }
               }
             }

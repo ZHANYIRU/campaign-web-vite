@@ -87,6 +87,14 @@
     align-items: center;
     padding: 12px;
     gap: 12px;
+    > svg {
+      cursor: pointer;
+      &:hover {
+        path {
+          fill: $YELLOW;
+        }
+      }
+    }
   }
 }
 @keyframes chat {

@@ -1,0 +1,52 @@
+@import "/src/color.scss";
+.footer_container {
+  width: 100%;
+  padding: 42px 312px;
+  background-color: $BLACK;
+  > h2 {
+    color: $WHITE;
+    font-family: GenSekiGothic TW;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-indent: 2.4px;
+    margin-bottom: 25px;
+  }
+  .material {
+    display: flex;
+    justify-content: space-between;
+    color: $WHITE;
+    font-family: GenSekiGothic TW;
+    font-weight: 300;
+    letter-spacing: 1.92px;
+    text-indent: 1.92px;
+    .area,
+    .phone {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .icon {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      > svg {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        &:last-of-type {
+          width: 32px;
+          height: 32px;
+        }
+        > path {
+          fill: $WHITE;
+        }
+        &:hover {
+          path {
+            fill: $YELLOW;
+          }
+        }
+      }
+    }
+  }
+}
