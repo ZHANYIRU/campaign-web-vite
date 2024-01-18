@@ -1,7 +1,37 @@
+import { useState, useEffect } from "react";
 import HeaderIcon from "@/assets/images/HeaderIcon";
 import VoteIcon from "@/assets/images/VoteIcon";
 import "./Main.scss";
 function Main() {
+  const targetDate = new Date("2024-07-30T00:00:00").getTime();
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+  function calculateTimeRemaining() {
+    const currentDate = new Date().getTime();
+    const timeDifference = targetDate - currentDate;
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    return {
+      days,
+      hours: hours < 10 ? `0${hours}` : hours,
+      minutes: minutes < 10 ? `0${minutes}` : minutes,
+      seconds: seconds < 10 ? `0${seconds}` : seconds,
+    };
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="main_container">
       <div className="main_item">
@@ -24,19 +54,19 @@ function Main() {
             <p className="main_time_number">3</p>
             <div className="main_time_day">
               <div className="day">
-                <div className="day_number">36</div>
+                <div className="day_number">{timeRemaining.days}</div>
                 <div className="day_text">DAY</div>
               </div>
               <div className="hour">
-                <div className="hour_number">07</div>
+                <div className="hour_number">{timeRemaining.hours}</div>
                 <div className="hour_text">HOUR</div>
               </div>
               <div className="min">
-                <div className="min_number">58</div>
+                <div className="min_number">{timeRemaining.minutes}</div>
                 <div className="min_text">MIN</div>
               </div>
               <div className="sec">
-                <div className="sec_number">32</div>
+                <div className="sec_number">{timeRemaining.seconds}</div>
                 <div className="sec_text">SEC</div>
               </div>
             </div>

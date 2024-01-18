@@ -1,8 +1,45 @@
 import FacebookIcon from "@/assets/images/FacebookIcon";
 import InstagramIcon from "@/assets/images/InstagramIcon";
+import { policyData, chartData } from "./utils";
 import "./PolicyIssues.scss";
+import { useEffect, useState } from "react";
 
 function PolicyIssues() {
+  const [select, setSelect] = useState(1);
+  const [policyItem, setPolicyItem] = useState([]);
+
+  const chartbgc = (id) => {
+    return select === id
+      ? { backgroundImage: `url(/src/assets/images/chatbgc-yellow.png)` }
+      : {};
+  };
+
+  const policyContentImage = () => {
+    switch (select) {
+      case 1:
+        return {
+          backgroundImage: `url(/src/assets/images/policycontent1.png)`,
+        };
+      case 2:
+        return {
+          backgroundImage: `url(/src/assets/images/policycontent2.png)`,
+        };
+      case 3:
+        return {
+          backgroundImage: `url(/src/assets/images/policycontent3.png)`,
+        };
+      default:
+        return {};
+    }
+  };
+
+  useEffect(() => {
+    const policy = policyData.filter((policy) => policy.id === select);
+    const chart = chartData.filter((policy) => policy.id === select);
+    setPolicyItem([
+      { ...policy[0], oneText: chart[0]?.oneText, twoText: chart[0]?.twoText },
+    ]);
+  }, [select]);
   return (
     <div className="policy_container" id="policy">
       <div className="policy_title">
@@ -10,58 +47,48 @@ function PolicyIssues() {
         <h2>政策議題</h2>
       </div>
       <div className="issue_container">
-        <div className="issue_wrap">
-          <div className="title">喵的保障</div>
-          <p>寵物醫療</p>
-          <p>保障方案</p>
-        </div>
-        <div className="issue_wrap">
-          <div className="title">喵的福利</div>
-          <p>打造寵物</p>
-          <p>休閒天堂</p>
-        </div>
-        <div className="issue_wrap">
-          <div className="title">
-            <p>喵的教育</p>
+        {chartData.map((chart) => (
+          <div
+            className="issue_wrap"
+            key={chart.id}
+            style={chartbgc(chart.id)}
+            onClick={() => setSelect(chart.id)}
+          >
+            <div className="title">{chart.title}</div>
+            <p>{chart.oneText}</p>
+            <p>{chart.twoText}</p>
           </div>
-          <p>推廣寵物</p>
-          <p>飼養教育</p>
-        </div>
+        ))}
       </div>
       <div className="policy_wrap">
-        <div className="title">
-          <h3>為毛孩子謀福利！ 推動寵物醫療保障方案</h3>
-          <div className="share">
-            <p>分享</p>
-            <FacebookIcon />
-            <InstagramIcon />
-          </div>
-        </div>
-        <div className="policy_contant_wrap">
-          <div className="left">
-            <div className="contant">
-              <div className="title">設立寵物醫療基金</div>
-              <p>每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</p>
+        {policyItem.map((policy) => (
+          <>
+            <div className="title">
+              <h3>{policy.mainTitle}</h3>
+              <div className="share">
+                <p>分享</p>
+                <FacebookIcon />
+                <InstagramIcon />
+              </div>
             </div>
-            <div className="contant">
-              <div className="title">提供醫療補助</div>
-              <p>
-                每隻寵物每年可獲得高達新台幣 20,000
-                元的醫療補助，減輕飼主的經濟壓力
-              </p>
+            <div className="policy_contant_wrap">
+              <div className="left">
+                {policy.content.map((item, i) => (
+                  <div className="contant" key={i}>
+                    <div className="title">{item.title}</div>
+                    <p>{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="right" style={policyContentImage()}>
+                <div style={{ right: select === 2 ? "54px" : "32px" }}>
+                  <p>{policy.oneText}</p>
+                  <p>{policy.twoText}</p>
+                </div>
+              </div>
             </div>
-            <div className="contant">
-              <div className="title">合作動物醫院</div>
-              <p>目前已有和超過 200 家動物醫院進行初步的合作討論</p>
-            </div>
-          </div>
-          <div className="right">
-            <div>
-              <p>寵物醫療</p>
-              <p>保障方案</p>
-            </div>
-          </div>
-        </div>
+          </>
+        ))}
       </div>
     </div>
   );
