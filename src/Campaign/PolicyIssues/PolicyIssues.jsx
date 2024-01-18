@@ -10,7 +10,7 @@ function PolicyIssues() {
 
   const chartbgc = (id) => {
     return select === id
-      ? { backgroundImage: `url(/src/assets/images/chatbgc-yellow.png)` }
+      ? { backgroundImage: `url(src/assets/images/chatbgc-yellow.png)` }
       : {};
   };
 
@@ -18,15 +18,15 @@ function PolicyIssues() {
     switch (select) {
       case 1:
         return {
-          backgroundImage: `url(/src/assets/images/policycontent1.png)`,
+          backgroundImage: `url(src/assets/images/policycontent1.png)`,
         };
       case 2:
         return {
-          backgroundImage: `url(/src/assets/images/policycontent2.png)`,
+          backgroundImage: `url(src/assets/images/policycontent2.png)`,
         };
       case 3:
         return {
-          backgroundImage: `url(/src/assets/images/policycontent3.png)`,
+          backgroundImage: `url(src/assets/images/policycontent3.png)`,
         };
       default:
         return {};
