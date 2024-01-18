@@ -9,27 +9,17 @@ function PolicyIssues() {
   const [policyItem, setPolicyItem] = useState([]);
 
   const chartbgc = (id) => {
-    return select === id
-      ? { backgroundImage: `url(src/assets/images/chatbgc-yellow.png)` }
-      : {};
+    return select === id ? "issue_wrap_yellow" : "";
   };
 
   const policyContentImage = () => {
     switch (select) {
-      case 1:
-        return {
-          backgroundImage: `url(src/assets/images/policycontent1.png)`,
-        };
       case 2:
-        return {
-          backgroundImage: `url(src/assets/images/policycontent2.png)`,
-        };
+        return "right_image2";
       case 3:
-        return {
-          backgroundImage: `url(src/assets/images/policycontent3.png)`,
-        };
+        return "right_image3";
       default:
-        return {};
+        return "";
     }
   };
 
@@ -49,9 +39,8 @@ function PolicyIssues() {
       <div className="issue_container">
         {chartData.map((chart) => (
           <div
-            className="issue_wrap"
+            className={`issue_wrap ${chartbgc(chart.id)}`}
             key={chart.id}
-            style={chartbgc(chart.id)}
             onClick={() => setSelect(chart.id)}
           >
             <div className="title">{chart.title}</div>
@@ -80,7 +69,7 @@ function PolicyIssues() {
                   </div>
                 ))}
               </div>
-              <div className="right" style={policyContentImage()}>
+              <div className={`right ${policyContentImage()}`}>
                 <div style={{ right: select === 2 ? "54px" : "32px" }}>
                   <p>{policy.oneText}</p>
                   <p>{policy.twoText}</p>

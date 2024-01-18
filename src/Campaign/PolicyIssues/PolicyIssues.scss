@@ -45,6 +45,9 @@
       flex-direction: column;
       align-items: center;
       cursor: pointer;
+      &_yellow {
+        background-image: url("/src/assets/images/chatbgc-yellow.png");
+      }
       > p {
         color: $BLACK;
         font-family: GenSekiGothic TW;
@@ -154,6 +157,12 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: relative;
+        &_image2 {
+          background-image: url("/src/assets/images/policycontent2.png");
+        }
+        &_image3 {
+          background-image: url("/src/assets/images/policycontent3.png");
+        }
         > div:first-of-type {
           position: absolute;
           bottom: 47px;
